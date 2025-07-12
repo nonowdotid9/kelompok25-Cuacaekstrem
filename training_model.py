@@ -40,9 +40,9 @@ model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X, y)
 
 # 7. Simpan model dan encoder
-joblib.dump(model, "streamlit/random_forest_model.pkl")
-joblib.dump(le_kejadian, "streamlit/encoder_kejadian.pkl")
-joblib.dump(le_provinsi, "streamlit/encoder_provinsi.pkl")
-joblib.dump(le_label, "streamlit/encoder_label.pkl")
+joblib.dump(model, "random_forest_model.pkl")
+joblib.dump(le_kejadian, "encoder_kejadian.pkl")
+joblib.dump(le_provinsi, "encoder_provinsi.pkl")
+joblib.dump(le_label, "encoder_label.pkl")
 
 print("Model dan encoder berhasil disimpan.")
