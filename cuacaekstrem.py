@@ -22,12 +22,12 @@ def load_encoders():
 # ========================
 
 st.set_page_config(page_title="Prediksi Keparahan Cuaca Ekstrem", layout="centered")
-st.title("🌪️ Klasifikasi Tingkat Keparahan Bencana Cuaca Ekstrem")
+st.title("Klasifikasi Tingkat Keparahan Bencana Cuaca Ekstrem")
 
 le_kejadi, le_prov, le_label = load_encoders()
 
-kejadian_input = st.selectbox("🌧️ Jenis Kejadian", le_kejadi.classes_)
-provinsi_input = st.selectbox("📍 Provinsi", le_prov.classes_)
+kejadian_input = st.selectbox("Jenis Kejadian", le_kejadi.classes_)
+provinsi_input = st.selectbox("Provinsi", le_prov.classes_)
 
 meninggal = st.number_input("Jumlah Meninggal", min_value=0)
 hilang = st.number_input("Jumlah Hilang", min_value=0)
@@ -36,7 +36,7 @@ rumah_rusak = st.number_input("Jumlah Rumah Rusak", min_value=0)
 rumah_terendam = st.number_input("Jumlah Rumah Terendam", min_value=0)
 fasum_rusak = st.number_input("Jumlah Fasilitas Umum Rusak", min_value=0)
 
-if st.button("🔍 Prediksi"):
+if st.button("Prediksi"):
     model = load_model()
 
     kejadian_encoded = le_kejadi.transform([kejadian_input])[0]
